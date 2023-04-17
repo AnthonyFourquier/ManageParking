@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.eni.gestion_parking.ihm.Controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <TableView fx:id="voitureTable" layoutX="9.0" layoutY="-2.0" prefHeight="196.0" prefWidth="278.0">
+              <columns>
+                <TableColumn fx:id="nomVoitureColonne" prefWidth="76.0" text="Nom" />
+                <TableColumn fx:id="piVoitureColonne" prefWidth="84.0" text="PI" />
+                  <TableColumn fx:id="nomPrenomVoitureColonne" prefWidth="120.0" text="Nom et Prénom" />
+              </columns>
+            </TableView>
+            <TableView fx:id="personneTable" layoutX="299.0" layoutY="-2.0" prefHeight="196.0" prefWidth="286.0">
+              <columns>
+                <TableColumn fx:id="nomColonne" prefWidth="135.0" text="Nom" />
+                <TableColumn fx:id="prenomColonne" prefWidth="150.0" text="Prénom" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="194.0" prefWidth="598.0">
+         <children>
+            <Label layoutX="19.0" layoutY="8.0" text="Nom" />
+            <Label layoutX="19.0" layoutY="47.0" text="PI" />
+            <TextField fx:id="nomVoiture" layoutX="65.0" layoutY="4.0" />
+            <TextField fx:id="PIVoiture" layoutX="65.0" layoutY="43.0" />
+            <Label layoutX="343.0" layoutY="12.0" text="Nom" />
+            <Label layoutX="336.0" layoutY="51.0" text="Prénom" />
+            <TextField fx:id="nomPersonne" layoutX="397.0" layoutY="8.0" />
+            <TextField fx:id="prenomPersonne" layoutX="397.0" layoutY="47.0" />
+            <Button layoutX="410.0" layoutY="115.0" mnemonicParsing="false" onAction="#modifierPersonne" text="Modifier" />
+            <Button layoutX="491.0" layoutY="115.0" mnemonicParsing="false" onAction="#deletePersonne" text="Supprimer" />
+            <Button layoutX="116.0" layoutY="115.0" mnemonicParsing="false" onAction="#modifierVoiture" text="Modifier" />
+            <Button layoutX="329.0" layoutY="115.0" mnemonicParsing="false" onAction="#ajouterPersonne" text="Ajouter" />
+            <Button layoutX="197.0" layoutY="115.0" mnemonicParsing="false" onAction="#deleteVoiture" text="Supprimer" />
+            <Button layoutX="35.0" layoutY="115.0" mnemonicParsing="false" onAction="#ajouterVoiture" text="Ajouter" />
+            <Button layoutX="28.0" layoutY="152.0" mnemonicParsing="false" onAction="#exportXml" text="Exporter les donnée au format XML">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="329.0" layoutY="152.0" mnemonicParsing="false" onAction="#exportCsv" text="Exporter les donnée au format CSV">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ChoiceBox fx:id="selectName" layoutX="64.0" layoutY="80.0" prefWidth="150.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
